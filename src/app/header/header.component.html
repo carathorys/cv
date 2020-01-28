@@ -1,0 +1,33 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span>{{pageTitle | translate}}</span>
+    <span class="fill-space"></span>
+    <button mat-icon-button (click)="facebook($event)">
+      <mat-icon fontSet="fa" fontIcon="fa-facebook-square"></mat-icon>
+    </button>
+    <button mat-icon-button (click)="linkedin($event)">
+      <mat-icon fontSet="fa" fontIcon="fa-linkedin-square"></mat-icon>
+    </button>
+    <button mat-icon-button (click)="github($event)">
+      <mat-icon fontSet="fa" fontIcon="fa-github-square"></mat-icon>
+    </button>
+    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'en'}" mat-button
+            (click)="en()">{{"English" | translate}}</button>
+    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'hu'}" mat-button
+            (click)="hu()">{{"Hungarian" | translate}}</button>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="menu">
+    <nav mat-tab-nav-bar>
+      <a
+        mat-tab-link
+        *ngFor="let link of navigation"
+        [routerLink]="link.path"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [active]="rla.isActive"
+      >
+        {{link.path | translate}}
+      </a>
+    </nav>
+  </mat-toolbar-row>
+</mat-toolbar>
