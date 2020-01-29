@@ -26,7 +26,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MissingTranslationHelper } from './missing-translation-helper';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
 export function MissingTranslationHelperFactory() {
   return new MissingTranslationHelper();
