@@ -4,25 +4,43 @@
 
 button[mat-icon-button] {
   margin: 10px;
+  @media (max-width: 960px) {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+  }
+}
+
+button[mat-button] {
+  @media (max-width: 960px) {
+    padding: 0;
+  }
 }
 
 mat-toolbar {
-  background: url('../../assets/header_bg.jpg');
+  background: url('../../assets/header_bg.jpg') no-repeat center;
+  background-size: cover;
   color: white;
 
   mat-toolbar-row {
     background-color: rgba(0, 0, 0, 0.5);
+
     @media (max-width: 960px) {
       padding: 0;
-      .mat-tab-link{
+      max-width: 100%;
+      overflow-x: scroll;
+      .mat-tab-link {
         padding: 0 16px;
+      }
+      h1 {
+        display: none;
       }
     }
 
     &.menu {
       height: auto;
 
-        overflow-x: auto;
+      overflow-x: auto;
     }
   }
 }
@@ -43,9 +61,3 @@ mat-icon {
     color: black;
   }
 }
-
-// ::ng-deep button[mat-icon-button], ::ng-deep .mat-icon-button {
-//     font-size: 22px;
-//     width: 36px !important;
-//     height: 36px !important;
-// }
