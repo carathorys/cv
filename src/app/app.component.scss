@@ -1,3 +1,12 @@
+@import '~@angular/material/theming';
+
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+}
+
 .main-container {
   position: absolute;
   top: 0;
@@ -7,5 +16,6 @@
 }
 
 .content {
-  padding: 15px;
+  height: 100%;
+  overflow: auto;
 }

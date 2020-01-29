@@ -1,11 +1,4 @@
-<mat-sidenav-container #drawer class="main-container">
-  <mat-sidenav mode="push">
-    Contents
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <cv-header (openMenu)="drawer.open()" [pageTitle]="title"></cv-header>
-    <section class="content">
-      <router-outlet></router-outlet>
-    </section>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<cv-header [pageTitle]="title"></cv-header>
+<section class="content">
+  <router-outlet></router-outlet>
+</section>

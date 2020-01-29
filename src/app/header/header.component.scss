@@ -12,9 +12,17 @@ mat-toolbar {
 
   mat-toolbar-row {
     background-color: rgba(0, 0, 0, 0.5);
+    @media (max-width: 960px) {
+      padding: 0;
+      .mat-tab-link{
+        padding: 0 16px;
+      }
+    }
 
     &.menu {
       height: auto;
+
+        overflow-x: auto;
     }
   }
 }

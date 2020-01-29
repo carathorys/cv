@@ -1,0 +1,200 @@
+:host {
+  &, & * {
+    box-sizing: border-box;
+  }
+}
+
+#timeline {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &:before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    bottom: 15px;
+    background-color: whitesmoke;
+  }
+
+  @media (max-width: 960px) {
+    &:before {
+      display: none;
+    }
+  }
+
+  $arrowSize: 25px;
+
+  #timeline-item-wrapper {
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+
+    mat-card {
+      box-sizing: border-box;
+      margin: 1%;
+      width: 46%;
+      padding: 0;
+
+      @for $i from 3 through 6 {
+        &:nth-child(#{$i}) {
+          top: $i * -75px
+        }
+      }
+      &:last-child {
+        margin-bottom: -420px;
+      }
+      &:nth-child(2) {
+        top: -200px
+      }
+      &:nth-child(even) {
+        left: 52%;
+
+        mat-card-header {
+          &:after {
+            border-left-width: 0px !important;
+            border-right-width: $arrowSize;
+            left: -$arrowSize;
+          }
+        }
+      }
+
+      @media (max-width: 960px) {
+        box-sizing: border-box;
+        margin: 15px;
+        width: auto;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        mat-card-header:after {
+          display: none;
+        }
+      }
+
+      &:nth-child(odd) {
+        mat-card-header {
+          &:after {
+            right: -$arrowSize;
+          }
+        }
+      }
+
+      mat-card-header {
+        text-transform: uppercase;
+        padding: 16px 16px 0 16px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        &:after {
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 0;
+          top: 10px;
+          border-top: $arrowSize solid transparent !important;
+          border-bottom: $arrowSize solid transparent !important;
+          border-left-width: $arrowSize;
+          border-left-style: solid;
+          border-right-width: 0px;
+          border-right-style: solid;
+        }
+
+        .header-image {
+          width: 80px;
+          height: 80px;
+          background-color: whitesmoke;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+        }
+      }
+
+      &.provident-1 {
+        mat-card-header {
+          background-color: #00ace9;
+
+          .header-image {
+            background-image: url("src/assets/ipf.png");
+          }
+
+          &:after {
+            border-color: #00ace9;
+          }
+        }
+      }
+
+      &.provident-2 {
+        mat-card-header {
+          background-color: #add943;
+          color: black;
+
+          .header-image {
+            background-image: url("src/assets/ipf.png");
+          }
+
+          &:after {
+            border-color: #add943;
+          }
+
+          mat-card-subtitle {
+            color: black;
+          }
+        }
+      }
+
+      &.digic {
+        mat-card-header {
+          background: black;
+
+          .header-image {
+            background-image: url("src/assets/digic.png");
+          }
+
+          &:after {
+            border-color: black;
+          }
+        }
+      }
+
+      &.budacode {
+        mat-card-header {
+          background-color: #1F6C80;
+
+          .header-image {
+            background-image: url("src/assets/budacode.png");
+          }
+
+          &:after {
+            border-color: #1F6C80;
+          }
+        }
+      }
+
+      &.wponline {
+        mat-card-header {
+          background-color: #ff6969;
+
+          .header-image {
+            background-image: url("src/assets/wpo.png");
+          }
+
+          &:after {
+            border-color: #ff6969;
+          }
+        }
+      }
+
+      mat-card-content {
+        text-align: justify;
+        padding: 16px
+      }
+    }
+
+  }
+}
