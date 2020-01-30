@@ -2,8 +2,13 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 
-interface Menu {
-  path: string;
+class Menu {
+  public get path(): string {
+    return this.title.substring(4);
+  }
+
+  constructor(public readonly title: string) {
+  }
 }
 
 @Component({
@@ -20,21 +25,11 @@ export class HeaderComponent implements OnInit {
   constructor(public readonly translateService: TranslateService) {
     this.openMenu = new EventEmitter<Event>(true);
     this.navigation = [
-      {
-        path: marker('personalData')
-      },
-      {
-        path: marker('experiences')
-      },
-      {
-        path: marker('educations')
-      },
-      {
-        path: marker('skills')
-      },
-      {
-        path: marker('contact')
-      }
+      new Menu(marker('nav.personalData')),
+      new Menu(marker('nav.experiences')),
+      new Menu(marker('nav.educations')),
+      new Menu(marker('nav.skills')),
+      new Menu(marker('nav.contact'))
     ];
   }
 

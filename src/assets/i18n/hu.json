@@ -1,33 +1,55 @@
 {
-	"2012_apr": "2012. Április",
-	"2013_aug": "2013. Augusztus",
-	"2016_february": "2016. Február",
-	"2016_sept": "2016. Szeptember",
-	"2017_march": "2017. Március",
-	"2018_february": "2018. február",
-	"English": "Angol",
-	"Hungarian": "Magyar",
 	"PAGE_TITLE": "Gallay Balázs",
-	"contact": "Kapcsolat",
-	"date_of_birth": "1989. 09. 06.",
-	"developer": "developer",
-	"educations": "Tanulmányok",
-	"email_address": "gallayb@gmail.com",
-	"experiences": "Munkatapasztalat",
-	"full_name": "Gallay Balázs",
-	"it_developer": "it_developer",
-	"it_solution_architect": "it_solution_architect",
-	"lbl_date_of_birth": "Születési dátum",
-	"lbl_email_address": "E-mail cím",
-	"lbl_full_name": "Teljes név",
-	"lbl_location": "Lakóhely",
-	"lbl_phone_number": "Telefonszám",
-	"lbl_place_of_birth": "Születési hely",
-	"location": "Budapest, Magyarország",
-	"nowadays": "jelenleg",
-	"personalData": "Személyes adatok",
-	"phone_number": "+36 20 234 39 63",
-	"place_of_birth": "Budapest, Magyarország",
-	"skills": "Technológiák",
-	"workplace_ipf": "Provident Pénzügyi Zrt."
+	"date": {
+		"2012_apr": "2012. Április",
+		"2013_aug": "2013. Augusztus",
+		"2016_february": "2016. Február",
+		"2016_sept": "2016. Szeptember",
+		"2017_march": "2017. Március",
+		"2018_february": "2018. február",
+		"nowadays": "jelenleg"
+	},
+	"jobdesc": {
+		"budacode": "Itt elmélyíthettem tudásomat a modern webes alkalmazáskészítésröl (<i>Angular, NodeJS</i>). Hatalmas váltás volt ismét, mivel Microsoft rendszereket nem használhattunk. A cég profilja leginkább webes alkalmazásokra korlátozódott, ezért a backend feladatokat egyedül kellett ellátnom.",
+		"digic": "Itt a fiatalabb bátyámmal együtt dolgoztam. A cég egy nagyon régi, architektúrálisan elavult WinForms-os alkalmazását szerette volna lecserélni. Azt terveztük, hogy létrehozzuk az alkalmazás webes megfelelöjét, de különbozö nézeteltérések miatt nem engedték ezen jellegü fejlesztéseket. Az alkalmazásban lévö biztonsági hibákat figyelmen kívül hagyták, és nem adták meg nekünk a lehetöséget, hogy javítsuk azokat.",
+		"provi1": "Hatalmas váltás volt számomra, az addigi Linux/PHP ökoszisztémából átcsöppentem a Microsoft világába. Különbözö fejlesztési, és terveyési feladatokat kaptam, sok mindent kitanulhattam (MS SQL, WCF, SSRS, PowerShell, SignalR), valamint változatos technikákat alkalmazhattam. Itt kezdtem megismerkedni a különbözö kliens authentikációkkal (HTTPS Client CERT, NTLM, stb...), valamint az AngularJS világával. Legfontosabb feladatom egy olyan központi WCF szolgáltatás kialakítása volt, amit a külsö beszállítók használhattak, ezzel megnyitva a céges rendszerek egy részét számukra.",
+		"provi2": "Miután újra a Providenthez kerültem, a kezdetben a feladataim szinte semmit sem változtak. Körülbelül fél évvel késöbb azonban a cégen belüli program keretében racionalizálni akarták az IT-t, így megnyíltak számomra a nemzetközi lehetöségek is. Kezdetben leginkább a Cseh csapattal kellett együttmüködni, késöbb pedig már az egész cégcsoporttal (<i>Anglia, Csehország, Románia, Lengyelország, és Mexikó</i>)",
+		"provi3": "Az elsö év a kinevezés után az utazásról szólt. Minden második héten Angliába kellett utaznom (<i>Leeds</i>), mivel egy nemzetközi projekt keretén belül a cég egy saját, mobileszköz menedzsment implementálásába kezdett. A döntés hátterében a <i>Kony Enterprise Store</i> megszüntetése, valamint a <i>Mobile Iron</i> ára állt. A cél egy, felhöben (<i>AWS</i>) müködö alkalmazás, valamint keretrendszer elkészítése volt, melyet 2018 végére, idöben el is készítettünk. Fejlesztöi, valamint architect feladatokat is elláttam a projekten. A projekt lezárulta után egy (</i>eleinte csak magyar piacra szánt</i>) mobilalkalmazás projektre kerültem, mely az ügyfelek azonosítóit volt hivatott letárolni. A fejlesztéshez az elözöleg fejlesztett keretrendszert, valamint AWS-t használtunk.",
+		"wpo": "Kezdetben a feladatom különbözö weboldalak létrehozása volt (egy általunk fejlesztett adminisztrációs felülettel) hazai, és külföldi (holland, dubai) partnerek számára, valamint a szerverek (Linux) karbantartása, konfigurálása, és felügyelete. Késöbb ez változott, elkezdtünk dolgozni egy RSS olvasó eszközön (Feedy). Itt OAuth implementálása, valamint különbözö (dokumentálatlan) Google API-k használatát tanulhattam meg."
+	},
+	"labels": {
+		"date_of_birth": "Születési dátum",
+		"email_address": "E-mail cím",
+		"english": "Angol",
+		"full_name": "Teljes név",
+		"hungarian": "Magyar",
+		"location": "Lakóhely",
+		"phone_number": "Telefonszám",
+		"place_of_birth": "Születési hely"
+	},
+	"nav": {
+		"contact": "Kapcsolat",
+		"educations": "Tanulmányok",
+		"experiences": "Munkatapasztalat",
+		"personalData": "Személyes adatok",
+		"skills": "Jártasságok"
+	},
+	"pData": {
+		"date_of_birth": "1989 Szeptember 06.",
+		"email_address": "gallayb@gmail.com",
+		"full_name": "Gallay Balázs",
+		"location": "Budapest, Magyarország",
+		"phone_number": "+36 20 234 39 63",
+		"place_of_birth": "Budapest, Magyarország"
+	},
+	"position": {
+		"architect": "IT Solution Architect",
+		"developer": "Fejlesztő",
+		"fullstack": "Fullstack fejlesztő",
+		"seniordev": "Senior fejlesztő"
+	},
+	"workplace": {
+		"ipf": "Provident Pénzügyi Zrt.",
+		"wpo": "WP Online Digitális médiaügynökség"
+	}
 }

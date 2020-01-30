@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "i18n": "ngx-translate-extract --sort --key-as-default-value true --input ./src --output ./src/assets/i18n/{hu,}.json --format namespaced-json"
+    "i18n": "npm run i18n_hu && npm run i18n_en",
+    "i18n_hu": "ngx-translate-extract --sort --key-as-default-value true --input ./src --output ./src/assets/i18n/hu.json --format namespaced-json",
+    "i18n_en": "ngx-translate-extract --sort --key-as-default-value true --input ./src --output ./src/assets/i18n/en.json --format namespaced-json"
   },
   "private": true,
   "dependencies": {

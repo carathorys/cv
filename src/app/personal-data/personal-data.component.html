@@ -5,37 +5,37 @@
       <div class="row">
         <div class="row">
           <mat-form-field>
-            <input matInput value="{{ 'full_name' | translate: { default: 'Balazs Gallay' } }}" readonly
-                   placeholder="{{'lbl_full_name' | translate: { default: 'Full name'} }}"/>
+            <input matInput value="{{ 'pData.full_name' | translate }}" readonly
+                   placeholder="{{'labels.full_name' | translate }}"/>
             <mat-icon matSuffix>contacts</mat-icon>
           </mat-form-field>
           <mat-form-field>
-            <input matInput value="{{ 'date_of_birth' | translate: { default: '06/09/1989' } }}" readonly
-                   placeholder="{{ 'lbl_date_of_birth' | translate: { default: 'Date of birth' } }}"/>
+            <input matInput value="{{ 'pData.date_of_birth' | translate }}" readonly
+                   placeholder="{{ 'labels.date_of_birth' | translate }}"/>
             <mat-icon matSuffix>calendar_today</mat-icon>
           </mat-form-field>
         </div>
         <div class="row">
           <mat-form-field>
-            <input matInput value="{{ 'location' | translate: { default: 'Hungary, Budapest' } }}" readonly
-                   placeholder="{{ 'lbl_location' | translate: { default: 'Location' } }}"/>
+            <input matInput value="{{ 'pData.location' | translate }}" readonly
+                   placeholder="{{ 'labels.location' | translate }}"/>
             <mat-icon matSuffix>place</mat-icon>
           </mat-form-field>
           <mat-form-field>
-            <input matInput value="{{ 'email_address' | translate: { default: 'gallayb@gmail.com' } }}" readonly
-                   placeholder="{{ 'lbl_email_address' | translate: { default: 'E-mail' } }}"/>
+            <input matInput value="{{ 'pData.email_address' | translate }}" readonly
+                   placeholder="{{ 'labels.email_address' | translate }}"/>
             <mat-icon matSuffix (click)="mailContact()">email</mat-icon>
           </mat-form-field>
         </div>
         <div class="row">
           <mat-form-field>
-            <input matInput value="{{ 'place_of_birth' | translate: { default: 'Hungary, Budapest' } }}" readonly
-                   placeholder="{{ 'lbl_place_of_birth' | translate: { default: 'Birth place' } }}"/>
+            <input matInput value="{{ 'pData.place_of_birth' | translate }}" readonly
+                   placeholder="{{ 'labels.place_of_birth' | translate }}"/>
             <mat-icon matSuffix>place</mat-icon>
           </mat-form-field>
           <mat-form-field>
-            <input matInput value="{{ 'phone_number' | translate: { default: '+36 20 234 3963' } }}" readonly
-                   placeholder="{{ 'lbl_phone_number' | translate: { default: 'Phone number' } }}"/>
+            <input matInput value="{{ 'pData.phone_number' | translate }}" readonly
+                   placeholder="{{ 'labels.phone_number' | translate }}"/>
             <mat-icon matSuffix (click)="phoneContact()">phone</mat-icon>
           </mat-form-field>
         </div>
