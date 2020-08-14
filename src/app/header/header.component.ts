@@ -1,6 +1,9 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, AfterViewInit, OnChanges, SimpleChanges, ɵɵInheritDefinitionFeature } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { trigger, style, state, transition, animate } from '@angular/animations';
+import { FixedSizeVirtualScrollStrategy } from '@angular/cdk/scrolling';
 
 class Menu {
   public get path(): string {
@@ -14,11 +17,31 @@ class Menu {
 @Component({
   selector: 'cv-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('myStyle', [
+      state('float', style({
+        opacity: 0.8,
+        position: 'fixed',
+        boxShadow: '0 0 10px #fff',
+        backdropFilter: 'blur(10px)'
+
+      })),
+      state('fixed', style({
+        opacity: 1,
+        position: 'inherit',
+        boxShadow: '0 0 0 #fff',
+        backdropFilter: 'blur(0px)'
+
+      })),
+      transition('* => *', [animate('300ms')])
+    ])
+  ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Output() openMenu: EventEmitter<Event>;
   @Input() pageTitle: string;
+  @Input() public scrolled: boolean = true;
 
   navigation: Menu[];
 
@@ -31,9 +54,6 @@ export class HeaderComponent implements OnInit {
       new Menu(marker('nav.skills')),
       new Menu(marker('nav.contact'))
     ];
-  }
-
-  ngOnInit() {
   }
 
   facebook(evt: Event) {

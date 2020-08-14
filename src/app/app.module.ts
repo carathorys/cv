@@ -44,8 +44,8 @@ export function MissingTranslationHelperFactory() {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

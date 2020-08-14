@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, HostBinding } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { Title } from '@angular/platform-browser';
 
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'cv-root',
@@ -13,9 +14,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
   title = marker('PAGE_TITLE');
 
-  constructor(private readonly iconRegistry: MatIconRegistry,
-              private readonly titleService: Title,
-              private readonly translateService: TranslateService
+  public scrollSubject = new BehaviorSubject<boolean>(false);
+
+  constructor(
+    private readonly iconRegistry: MatIconRegistry,
+    private readonly titleService: Title,
+    private readonly translateService: TranslateService,
+    private elRef: ElementRef
   ) {
     this.iconRegistry.registerFontClassAlias('FontAwesome', 'fa');
     this.translateService.addLangs(['hu']);
@@ -32,6 +37,16 @@ export class AppComponent implements OnInit {
     this.translateService.onLangChange.subscribe(x => {
       localStorage.setItem('lang', x.lang);
     });
+  }
+
+  @HostListener('document:scroll', [])
+  onScroll(evt: any): void {
+    const scroller = document.scrollingElement || document.body;
+    if (scroller.scrollTop === 0) {
+      this.scrollSubject.next(false);
+    } else {
+      this.scrollSubject.next(true);
+    }
   }
 
   ngOnInit(): void {

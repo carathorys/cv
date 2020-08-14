@@ -1,11 +1,11 @@
-<mat-toolbar>
+<mat-toolbar [@myStyle]="scrolled ? 'float' : 'fixed'">
   <mat-toolbar-row>
     <h1>{{pageTitle | translate}}</h1>
     <span class="fill-space"></span>
     <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'en'}" mat-button
-            (click)="en()">{{"labels.english" | translate }}</button>
+      (click)="en()">{{"labels.english" | translate }}</button>
     <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'hu'}" mat-button
-            (click)="hu()">{{"labels.hungarian" | translate }}</button>
+      (click)="hu()">{{"labels.hungarian" | translate }}</button>
     <button mat-icon-button (click)="facebook($event)">
       <mat-icon fontSet="fa" fontIcon="fa-facebook-square"></mat-icon>
     </button>
@@ -18,14 +18,8 @@
   </mat-toolbar-row>
   <mat-toolbar-row class="menu">
     <nav mat-tab-nav-bar>
-      <a
-        mat-tab-link
-        *ngFor="let link of navigation"
-        [routerLink]="link.path"
-        routerLinkActive
-        #rla="routerLinkActive"
-        [active]="rla.isActive"
-      >
+      <a mat-tab-link *ngFor="let link of navigation" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive">
         {{ link.title | translate }}
       </a>
     </nav>

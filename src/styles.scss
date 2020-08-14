@@ -29,11 +29,8 @@ $bg: map-get(map-get($cv-theme, background), background);
 /* You can add global styles to this file, and also import other style files */
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   min-width: 350px;
-  display: flex;
-  flex: 1;
-  overflow-y: hidden;
 }
 
 body {
