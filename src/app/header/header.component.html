@@ -2,6 +2,10 @@
   <mat-toolbar-row>
     <h1>{{pageTitle | translate}}</h1>
     <span class="fill-space"></span>
+    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'en'}" mat-button
+            (click)="en()">{{"labels.english" | translate }}</button>
+    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'hu'}" mat-button
+            (click)="hu()">{{"labels.hungarian" | translate }}</button>
     <button mat-icon-button (click)="facebook($event)">
       <mat-icon fontSet="fa" fontIcon="fa-facebook-square"></mat-icon>
     </button>
@@ -11,10 +15,6 @@
     <button mat-icon-button (click)="github($event)">
       <mat-icon fontSet="fa" fontIcon="fa-github-square"></mat-icon>
     </button>
-    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'en'}" mat-button
-            (click)="en()">{{"labels.english" | translate }}</button>
-    <button [ngClass]="{'change-lang': true, 'active': translateService.currentLang == 'hu'}" mat-button
-            (click)="hu()">{{"labels.hungarian" | translate }}</button>
   </mat-toolbar-row>
   <mat-toolbar-row class="menu">
     <nav mat-tab-nav-bar>

@@ -23,7 +23,12 @@ mat-toolbar {
   color: white;
 
   mat-toolbar-row {
-    background-color: rgba(0, 0, 0, 0.5);
+    // &:not(.menu) {
+      background-color: rgba(0, 0, 0, 0.2);
+    // }
+    // &.menu {
+    //   backdrop-filter: blur(20px) saturate(150%) brightness(100%);
+    // }
 
     @media (max-width: 960px) {
       padding: 0;
@@ -51,13 +56,20 @@ mat-icon {
 
 .mat-tab-label-active {
   background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px) saturate(150%) brightness(100%);
+  opacity: 1;
+}
+.mat-tab-nav-bar, .mat-tab-header {
+  border-bottom: none;
 }
 
 .change-lang {
   width: 100px;
 
   &.active {
-    background-color: rgba(255, 255, 255, 0.6);
-    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    opacity: 1;
+    backdrop-filter: blur(20px) saturate(150%) brightness(100%);
   }
 }
