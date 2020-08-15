@@ -1,4 +1,14 @@
-import { Component, OnInit, Output, EventEmitter, Input, AfterViewInit, OnChanges, SimpleChanges, ɵɵInheritDefinitionFeature } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  AfterViewInit,
+  OnChanges,
+  SimpleChanges,
+  ɵɵInheritDefinitionFeature
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -21,18 +31,12 @@ class Menu {
   animations: [
     trigger('myStyle', [
       state('float', style({
-        opacity: 0.8,
-        position: 'fixed',
-        boxShadow: '0 0 10px #fff',
-        backdropFilter: 'blur(10px)'
-
+        opacity: 0.7,
+        boxShadow: '0 0 15px #000'
       })),
       state('fixed', style({
         opacity: 1,
-        position: 'inherit',
-        boxShadow: '0 0 0 #fff',
-        backdropFilter: 'blur(0px)'
-
+        boxShadow: '0 1px 3px #000'
       })),
       transition('* => *', [animate('300ms')])
     ])

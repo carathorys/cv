@@ -4,6 +4,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  backdrop-filter: blur(10px);
 }
 
 .scrolled :host {
@@ -35,22 +36,17 @@ mat-toolbar {
   color: white;
 
   mat-toolbar-row {
-    // &:not(.menu) {
-      background-color: rgba(0, 0, 0, 0.2);
-    // }
-    // &.menu {
-    //   backdrop-filter: blur(20px) saturate(150%) brightness(100%);
-    // }
+    background-color: rgba(0, 0, 0, 0.2);
 
     @media (max-width: 960px) {
       padding: 0;
       max-width: 100%;
-      overflow-x: scroll;
+      overflow-x: auto;
       .mat-tab-link {
         padding: 0 16px;
       }
       h1 {
-        display: none;
+        margin-left: 1em;
       }
     }
 
@@ -70,9 +66,12 @@ mat-icon {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px) saturate(200%) brightness(70%);
   opacity: 1;
+  box-shadow: 0px 0px 7px #fff;
 }
+
 .mat-tab-nav-bar, .mat-tab-header {
   border-bottom: none;
+  width: 100%;
 }
 
 .change-lang {
